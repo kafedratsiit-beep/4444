@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор корма для слонов</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="page">
+
+        <header class="page-header">
+            <h1>🐘 Калькулятор корма для слонов</h1>
+            <p class="subtitle">Введите вес слона — узнаете, сколько еды ему нужно в сутки</p>
+        </header>
+
+        <section class="card calculator">
+            <h2>Расчёт рациона</h2>
+
+            <form id="calc-form" novalidate>
+                <label for="weight-input">Вес слона (кг):</label>
+                <input
+                    type="text"
+                    id="weight-input"
+                    name="weight"
+                    placeholder="Например, 4000"
+                    autocomplete="off">
+                <p id="error-message" class="error-message" hidden></p>
+
+                <button type="submit" id="calc-button">Рассчитать</button>
+            </form>
+
+            <div id="result-box" class="result-box" hidden>
+                <h3>Результат</h3>
+                <p id="result-text"></p>
+            </div>
+
+            <div class="hint">
+                Справка: слон съедает около 6% своего веса в сутки.
+                Считаем так: <strong>корм = вес × 0,06 кг</strong>.
+                Из них примерно 70% — сено и трава, 30% — овощи и фрукты.
+            </div>
+        </section>
+
+        <section class="card log-card">
+            <h2>Журнал запросов</h2>
+            <ul id="log-list" class="log-list"></ul>
+            <button type="button" id="clear-log-button" class="danger-button">
+                Очистить журнал
+            </button>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
